@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: lightblue;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+
+}
+
+
+.correct{
+  color: rgb(82, 200, 82);
+}
+
+.content.container h1{
+    color: crimson;
+}
+
+.content{
+    text-align: center;
+    }
+
+.content.container{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.content.container.timer{
+  padding-right: 20px;
+}
+
+#message{
+    font-family: 'Kumbh Sans', sans-serif;
+
+}
+
+#text{
+     box-shadow: grey 5px 8px 5px;
+     border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+/*    border: 10px solid green;
+ */    width: 85%;
+}
+
+
+
+
+.col-md-3.errors{
+  color: red;
+}
+.col-md-3.wpm{
+  color: rgb(16, 197, 16);
+}
+
+textarea:focus{
+				
+    animation: border-color-change;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+input{
+    height: 100px;
+    width: 50%;
+}
+
+.timer, .errors,
+.accuracy, .cpm, .wpm {
+  height: 100px;
+  width: 100px;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 20%;
+  box-shadow: grey 5px 8px 5px;
+}
+
+.head {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    color:black;
+    font-weight: bolder;
+  }
+
+
+  .init_time, .init_errors,
+.init_accuracy, .init_cpm,
+.init_wpm {
+  font-size: 35px;
+}
+
+#input_text{
+    box-shadow: grey 5px 8px 5px;
+  border-radius: 10px 10px 10px 10px;
+}
+  

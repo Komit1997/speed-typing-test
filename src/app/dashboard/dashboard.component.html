@@ -1,0 +1,41 @@
+<div class="main my-5">
+        <div class="content container">
+                <h1 class=" font-weight-bold"> Test your Typing Speed</h1> <br>
+<div class="row text-center">
+        
+        <div class="col-md-3 wpm">
+                <div class="head">Words/min</div>
+                <div class="init_wpm">{{words}}</div>
+              </div>
+        <div class="col-md-3 errors">
+                <div class="head">Errors</div>
+                <div class="init_errors">{{errorCount}}</div>
+        </div>
+
+        <div class=" col-md-3 timer">
+                <div class="head">Time(s)</div>
+                <div class="init_time">{{timeLeft}}</div>
+        </div>
+
+        <div class="col-md-3 accuracy">
+                <div class="head">Accuracy(%)</div>
+                <div class="init_accuracy">{{accuracyPercent}}</div>
+        </div>
+  </div>
+ </div>
+     
+        <textarea tabindex="1" autocomplete="off"  id="text"   rows="5" class=" correct bg-light text-dark"  >{{innerText}}</textarea>
+        <br>
+        <input rows="5" id=input_text class="bg-light text-dark" #Intext [disabled]="(timeLeft == 0)" placeholder="type here..." (keyup)="onAccuracyCheck($event)" />
+        <br>
+        <button class="btn btn-light px-4" id="start-btn" style="font-size: 25px;" (click)="setTimer()"
+                (click)="onClick()" >Start</button>
+         <button class="btn btn-light px-4 mt-3" id="start-btn" style="font-size: 25px;" (click)="setTimer()"
+             (click)="reloadPage()"   >Re-Test</button>       
+</div>
+
+<div id="result" class="mt-2 pt-2  text-center">
+
+        <h4 class="text-dark"></h4>
+
+</div>
