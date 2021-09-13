@@ -24,14 +24,14 @@
   </div>
  </div>
      
-        <textarea tabindex="1" autocomplete="off"  id="text"   rows="5" class=" correct bg-light text-dark"  >{{innerText}}</textarea>
+<!--         <textarea tabindex="1" autocomplete="off"  id="text" [innerHTML]="highlight()"   rows="5" class="highlightText bg-light text-dark"  >{{innerText}}</textarea>
+ -->        <br>
+        <p [innerHTML]="highlight()"></p>
+        <input rows="5" id=input_text class="bg-light text-dark"  [(ngModel)]="this.typeWord"  #Intext [disabled]="(timeLeft == 0)" placeholder="type here..." (keyup)="onAccuracyCheck($event)" />
         <br>
-        <input rows="5" id=input_text class="bg-light text-dark" #Intext [disabled]="(timeLeft == 0)" placeholder="type here..." (keyup)="onAccuracyCheck($event)" />
-        <br>
-        <button class="btn btn-light px-4" id="start-btn" style="font-size: 25px;" (click)="setTimer()"
-                (click)="onClick()" >Start</button>
-         <button class="btn btn-light px-4 mt-3" id="start-btn" style="font-size: 25px;" (click)="setTimer()"
-             (click)="reloadPage()"   >Re-Test</button>       
+     <button class="btn btn-light px-4" id="start-btn" style="font-size: 25px;" (click)="setTimer()" (click)="onClick()" *ngIf="!isStart" >Start</button>
+     <button class="btn btn-light px-4" id="start-btn" style="font-size: 25px;" *ngIf="isStart" >Stop</button>
+     <button class="btn btn-light px-4 mt-3" id="start-btn" style="font-size: 25px;"  (click)="reloadPage()">Re-Test</button>       
 </div>
 
 <div id="result" class="mt-2 pt-2  text-center">

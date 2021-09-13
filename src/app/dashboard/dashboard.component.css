@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
-    background-color: lightblue;
+    background-color:lavender;
     font-family: 'Josefin Sans', sans-serif;
 
 }
@@ -107,5 +107,18 @@ input{
 #input_text{
     box-shadow: grey 5px 8px 5px;
   border-radius: 10px 10px 10px 10px;
+}
+
+textarea{
+ 
+  text-align: center;
+}
+
+p{
+  font-size: x-large;
+}
+
+.highlightText {
+  background:green;
 }
   

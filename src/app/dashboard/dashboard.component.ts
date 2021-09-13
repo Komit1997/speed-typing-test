@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class DashboardComponent implements OnInit {
 
-  setofWords=[ "He looked down at the ground knowing that she would not like his answer He hesitated, knowing that the truth would only hurt ",
-  "There was a time when he would have embraced the change that was coming He looked down at the ground knowing that she would not like his answer",
-  "He hesitated, knowing that the truth would only hurt There was a time when he would have embraced the change that was coming",
-     "Please take your dog, Cali, out for a walk – he really needs some exercise!"
+  setofWords=[ "he looked down at the ground knowing that she would not like his answer He hesitated, knowing that the truth would only hurt ",
+  "there was a time when he would have embraced the change that was coming He looked down at the ground knowing that she would not like his answer",
+  "he hesitated, knowing that the truth would only hurt There was a time when he would have embraced the change that was coming",
+     "please take your dog, Cali, out for a walk – he really needs some exercise!"
     ]
 
   innerText: string;
@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit {
   accurateCount : number  = 0;
   accuracyPercent : any = 0;
   textWrapper: any;
+  query: string;
+  isStart : boolean =false;
 
   constructor() { }
 
@@ -56,9 +58,11 @@ export class DashboardComponent implements OnInit {
   stopTimer(){
     this.accuracyPercent = (this.accurateCount / (this.accurateCount  + this.errorCount) * 100).toFixed(2);
     clearInterval(this.interval);
+    this.isStart = false;
   } 
 
   onAccuracyCheck(event){
+    this.highlight();
     let text = event.target.value;
     this.typeWord = text;
     let length =  this.typeWord.length;
@@ -73,19 +77,20 @@ export class DashboardComponent implements OnInit {
       this.accurateCount++;
     }
   }
-    /* if(this.innerText[0] == this.typeWord){
-      this.textWrapper.style.borderColor = 'green';
-   }else{
-     this.textWrapper.style.borderColor = 'red';
-   } */
-
+    
     
      // let textLength =text.length ;
 
   
 
-  highlightText(){
-   
+  highlight(){
+    if(!this.typeWord) {
+      return this.innerText;
+  }
+     
+ return this.innerText.replace(new RegExp(this.typeWord, "i") , match => {
+      return '<span class="highlightText">' + match + '</span>';
+  });
   }
 
 
@@ -94,6 +99,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onClick(){
+    this.isStart = true;
     this.timeLeft =60;
      this.setTimer();
   }
