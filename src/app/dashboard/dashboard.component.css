@@ -8,6 +8,10 @@
 
 }
 
+body{
+  margin:0 auto;
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -115,7 +119,7 @@ textarea{
 }
 
 p{
-  font-size: x-large;
+  font-size:large;
 }
 
 .highlightText {
